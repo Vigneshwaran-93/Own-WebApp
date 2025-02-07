@@ -47,9 +47,30 @@ Flask is a lightweight Python web framework designed for simplicity and flexibil
 pip install -r requirements.txt
 ```
 
-
 ### 2. Run the app
 ```bash
 python app.py
 ```
+
+# What is NGINX?
+
+[NGINX](https://www.nginx.com/) is a powerful, high-performance web server and reverse proxy server. It’s known for its scalability, speed, and ability to handle a large number of concurrent connections. 
+
+Some common uses of NGINX:
+- **Web server**: Serving static files like HTML, CSS, JS, and images.
+- **Reverse proxy**: Forwarding client requests to another server (e.g., your Flask application).
+- **Load balancer**: Distributing incoming traffic across multiple backend servers.
+- **SSL/TLS termination**: Handling encrypted HTTPS connections.
+
+## Flask and NGINX Integration
+
+Flask is a Python web framework that is typically run on a WSGI server like `Gunicorn` or `uWSGI`. NGINX is often used as a reverse proxy to forward requests to the Flask application, which runs on a local server.
+
+### Why Use NGINX with Flask?
+
+- **Reverse Proxy**: NGINX can handle incoming HTTP requests and forward them to the Flask application, ensuring that your application only serves dynamic content.
+- **Static File Handling**: NGINX serves static files (like images, JavaScript, and CSS) directly, which is much more efficient than having the Flask app do it.
+- **Security**: NGINX can be configured to handle SSL/TLS encryption and perform rate limiting, blocking unwanted traffic, etc.
+- **Load Balancing**: If you scale your Flask app across multiple servers, NGINX can distribute the load between them.
+
 
