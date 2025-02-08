@@ -1,4 +1,4 @@
-# Own-WebApp (Under Building)
+# Own-WebApp
 Set up your Own app easily
 
 With the rise of AI, having knowledge of web app development has become essential. Web apps provide an interactive face for the solutions you've built, allowing you to showcase your work more effectively. While Streamlit is popular, it comes with some limitations in flexibility and ease of use. That's where Flask comes in – a lightweight and powerful framework for building and deploying web applications with ease.
@@ -74,3 +74,29 @@ Flask is a Python web framework that is typically run on a WSGI server like `Gun
 - **Load Balancing**: If you scale your Flask app across multiple servers, NGINX can distribute the load between them.
 
 
+# Setup Domain with SSL
+Before we start, point your domian to your VM IP Address. Add a 'A' record with main domain or a sub-domain.
+Check if it is pointing correctly from the link below.<br>
+[DNS-Checker](https://dnschecker.org/)
+
+### Update system packages
+```bash
+sudo apt update
+```
+### Install NGINX
+```bash
+sudo apt install -y nginx
+```
+
+### Install Certbot
+```bash
+sudo apt install -y certbot python3-certbot-nginx
+```
+
+### Run domain_setup.sh
+```bash
+chmod +x domain_setup.sh
+```
+```bash
+sudo ./domain_setup.sh
+```
