@@ -52,6 +52,17 @@ pip install -r requirements.txt
 python app.py
 ```
 
+
+# Port Numbers Overview
+
+Port numbers are identifiers used to route network traffic to specific services or applications on a computer. There are **65,535** possible ports, divided into:
+
+- **Well-Known Ports (0-1023)**: Reserved for standard services (e.g., HTTP on port 80).
+- **Registered Ports (1024-49151)**: Assigned to specific applications.
+- **Dynamic/Private Ports (49152-65535)**: Used for temporary connections.
+
+While the concept of ports is the same across all operating systems, the way they're managed can differ slightly between **Windows**, **macOS**, and **Linux**—particularly regarding permission handling and firewall configuration. Flask apps generally use ports like 5000, 8080, 8000, etc. You can assign any unused port. The program will throw an error if you try to use a port number that's already in use by another running program.
+
 # What is NGINX?
 
 [NGINX](https://www.nginx.com/) is a powerful, high-performance web server and reverse proxy server. It’s known for its scalability, speed, and ability to handle a large number of concurrent connections. 
