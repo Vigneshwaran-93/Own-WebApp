@@ -41,6 +41,38 @@ Flask is a lightweight Python web framework designed for simplicity and flexibil
 - **Scaling Issues**: Can be more challenging to scale for very large applications.
 - **Manual Setup**: Requires more setup for advanced features.
 
+## Detailed Structure of Flask Files Organising. 
+```bash
+your_flask_app/
+│
+├── app/                    # Contains the main application code
+│   ├── __init__.py         # Initializes the Flask app
+│   ├── routes.py           # Handles URL routing
+│   ├── models.py           # Defines the data models (if using databases)
+│   ├── forms.py            # Contains web forms (if using Flask-WTF)
+│   ├── static/             # Static files like CSS, JavaScript, images
+│   │   └── style.css       # Example CSS file
+│   ├── templates/          # HTML templates
+│   │   └── index.html      # Example HTML template
+│   ├── config.py           # Configuration settings (e.g., database URL, secrets)
+│   └── utils.py            # Utility functions or helpers
+│
+├── migrations/             # If using Flask-Migrate for database migrations
+│
+├── tests/                  # Unit tests for the application
+│   └── test_basic.py       # Example test file
+│
+├── venv/                   # Virtual environment folder (optional, depending on setup)
+│
+├── .env                    # Environment variables (for secrets, config, etc.)
+├── .gitignore              # Specifies files to ignore in git
+├── requirements.txt        # Python dependencies
+├── run.py                  # Entry point to run the Flask application
+└── README.md               # Project documentation
+```
+
+I have created three sample Flask programs using basic templates.
+
 ## Let's Start
 ### 1. Install the requirements
 ```bash
@@ -49,7 +81,11 @@ pip install -r requirements.txt
 
 ### 2. Run the app
 ```bash
-python app.py
+./sample_project_1/python app.py
+
+./sample_project_3/python app.py
+
+./sample_project_3/python app.py
 ```
 
 
@@ -62,6 +98,18 @@ Port numbers are identifiers used to route network traffic to specific services 
 - **Dynamic/Private Ports (49152-65535)**: Used for temporary connections.
 
 While the concept of ports is the same across all operating systems, the way they're managed can differ slightly between **Windows**, **macOS**, and **Linux**—particularly regarding permission handling and firewall configuration. Flask apps generally use ports like 5000, 8080, 8000, etc. You can assign any unused port. The program will throw an error if you try to use a port number that's already in use by another running program.
+
+### Run the app on public IP with port 80 (common HTTP port)
+```bash
+    if __name__ == '__main__':
+        app.run(debug=False, host='0.0.0.0', port=80)
+```
+### Run the app on localhost with port 5000
+```bash
+    if __name__ == '__main__':
+        app.run(debug=True, host='127.0.0.1', port=5000)
+```
+
 
 # What is NGINX?
 
